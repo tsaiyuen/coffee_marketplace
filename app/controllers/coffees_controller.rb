@@ -42,13 +42,13 @@ class CoffeesController < ApplicationController
     @coffee.destroy
     redirect_to coffees_path
   end
-  
- 
+
+
   private
   def coffee_params
   params.require(:coffee).permit(:name, :description, :price)
   end
-  
-  
+
+
 
 end
