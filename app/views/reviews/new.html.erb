@@ -1,0 +1,5 @@
+<%= simple_form_for [@coffee, @review] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :rating %>
+  <%= f.submit class: "btn btn-info" %>
+<% end %>
