@@ -1,0 +1,10 @@
+<h1>Edit <%= @coffee.name %></h1>
+
+<%= simple_form_for @coffee do |c| %>
+  <%= c.input :name %>
+  <%= c.input :description %>
+  <%= c.input :price %>
+  <%= c.submit class: "btn btn-info" %>
+<% end %>
+
+  <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
