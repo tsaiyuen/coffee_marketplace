@@ -1,0 +1,9 @@
+<%= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>
+
+<h1>Check all the available coffee!</h1>
+
+<ul>
+  <% @coffees.each do |c| %>
+    <li> <%= link_to c.name, coffee_path(c) %> - <%= c.description %> </li>
+  <% end %>
+</ul>
