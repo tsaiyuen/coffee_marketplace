@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 # gem devise
 gem 'devise'
 
+# gem geocoding for maps
+gem 'geocoder'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
