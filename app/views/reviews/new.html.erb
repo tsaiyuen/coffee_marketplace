@@ -1,5 +1,7 @@
-<%= simple_form_for @review do |f| %>
+<%= simple_form_for [@order, @review] do |f| %>
   <%= f.input :description %>
   <%= f.input :rating %>
   <%= f.submit class: "btn btn-info" %>
 <% end %>
+
+  <%= link_to "Back", reviews_path, class: "btn btn-primary" %>
