@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @order = Order.find(params[:order_id])
   end
-
+  
   def create
     @review = Review.new(review_params)
     @order = Order.find(params[:order_id])
@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     # @review.coffee = @coffee
     # Order.quantity = @coffee
     if @review.save
-      redirect_to coffee_path(@review)
+      redirect_to coffee_path(@order.coffee)
     else
       render "new"
     end
