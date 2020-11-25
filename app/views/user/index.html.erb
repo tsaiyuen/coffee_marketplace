@@ -1,0 +1,12 @@
+<h1>Here are the list of orders:</h1>
+
+<% users.each do |user|  %>
+  <ul>
+    <p>
+    Date: <%= user.first_name %>
+    <%= link_to "See more details", user_path(user) %>
+    </p>
+  </ul>
+<% end  %>
+
+<p><%= link_to "Go back to the home page", root_path %></p>

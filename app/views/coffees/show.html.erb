@@ -1,17 +1,21 @@
 <h1> <%= @coffee.name %> </h1>
-
-
-<h2> Grown by <%= @coffee.user.email %> </h2> 
+<h2> Grown by <%= @coffee.user.email %> </h2>
 <p> <%= @coffee.description %> </p>
 
-<h2>Reviews</h2>
-<%# should id be like this?
-  @reviews.each do |r|
-    r.description
-  end %>
-<p> Reviews descriptions </p>
-  <%= link_to "Buy this coffee", class: "btn btn-primary" %>
-  <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}  %>
-  <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
 
-<%# confirm: "Are you sure:"} class: "btn btn-primary" );@output... ... ^~~~~ %>
+<h2>Reviews</h2>
+<%# <%= @coffee.review %> 
+
+<% if @coffee.photo.attached? %>
+  <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+
+<%= simple_form_for Order.new do |c| %>
+  <%= c.input :quantity %>
+  <%= c.hidden_field :coffee_id, value: @coffee.id %>
+  <%= c.submit class: "btn btn-info", data: {confirm: "Are you sure you would like to complete this purchase?"} %>
+<% end %>
+
+<%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}  %>
+<%= link_to "Back", coffees_path, class: "btn btn-primary" %>

@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+
+#cloudinary for image hosting
+gem 'cloudinary', '~> 1.16.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
@@ -25,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 # gem devise
 gem 'devise'
 
+# gem geocoding for maps
+gem 'geocoder'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -38,7 +44,7 @@ gem 'simple_form'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', groups: [:development, :test]
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
