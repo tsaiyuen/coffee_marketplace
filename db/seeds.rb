@@ -17,15 +17,15 @@ puts "Finished creating user!"
 puts "Creating coffees..."
 coffee1 = Coffee.create(name: "Dark Strong Coffee", description: "This is a very strong and dark coffee. Must take it!", price: "10", user: User.first)
 file1 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
-coffee1.image.attach(io: file1, filename: 'some-image1.jpg')
+coffee1.photo.attach(io: file1, filename: 'some-image1.jpg')
 
 coffee2 = Coffee.create(name: "Super Power Coffee", description: "Drink it and you´ll be awake for 3 weeks!", price: "40", user: User.first)
 file2 = open('https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
-coffee2.image.attach(io: file2, filename: 'some-image2.jpg')
+coffee2.photo.attach(io: file2, filename: 'some-image2.jpg')
 
 coffee3 = Coffee.create(name: "Sweet Dreams", description: "Light coffee with no bitterness.", price: "20", user: User.first)
 file3 = open('https://images.unsplash.com/photo-1530032582480-edd739014c39?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
-coffee3.image.attach(io: file3, filename: 'some-image3.jpg')
+coffee3.photo.attach(io: file3, filename: 'some-image3.jpg')
 
 Coffee.create(name: "Gold Rocks", description: "Coffee with gold rocks inside.", price: "2000", user: User.second)
 Coffee.create(name: "Coffee the Best", description: "Best coffees in the region, this is a must.", price: "80", user: User.second)
