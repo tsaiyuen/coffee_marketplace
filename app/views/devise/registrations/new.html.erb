@@ -16,8 +16,9 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
-
+ <%# change the devise view for signup  %>
   <div class="form-actions">
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
