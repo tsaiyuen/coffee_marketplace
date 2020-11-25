@@ -5,11 +5,6 @@
 <p> <%= @coffee.description %> </p>
 
 
-<%= simple_form_for [@coffee] do |f|  %>
-  <%= f.input :image_url, placeholder: 'https://add_cool_image.com' %>
-  <%= f.submit 'Add', class: 'btn btn-info' %>
-<%= end %>
-
 <h2>Reviews</h2>
 <%# should id be like this?
   @reviews.each do |r|
@@ -19,5 +14,14 @@
   <%= link_to "Buy this coffee", class: "btn btn-primary" %>
   <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}  %>
   <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
+
+<% if @coffee.photo.attached? %>
+  <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<%# <% @user = current_user %> 
+<% if @coffee.user.photo.attached? %>
+  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 <%# confirm: "Are you sure:"} class: "btn btn-primary" );@output... ... ^~~~~ %>
