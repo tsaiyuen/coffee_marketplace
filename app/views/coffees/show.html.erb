@@ -4,11 +4,7 @@
 
 
 <h2>Reviews</h2>
-<%# should id be like this?
-  @reviews.each do |r|
-    r.description
-  end %>
-<p> Reviews descriptions </p>
+<%# <%= @coffee.review %> 
 
 <% if @coffee.photo.attached? %>
   <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
