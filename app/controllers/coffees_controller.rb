@@ -6,7 +6,6 @@ class CoffeesController < ApplicationController
 
   def show
     @coffee = Coffee.find(params[:id])
-    # make a form with button "place order" to create order
   end
 
   def new
@@ -43,12 +42,10 @@ class CoffeesController < ApplicationController
     redirect_to coffees_path
   end
 
-
   private
+
   def coffee_params
-  params.require(:coffee).permit(:name, :description, :price)
+    params.require(:coffee).permit(:name, :description, :price)
   end
-
-
 
 end
