@@ -14,7 +14,7 @@
   <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
-<%# confirm: "Are you sure:"} class: "btn btn-primary" );@output... ... ^~~~~ %>
+
 <%= simple_form_for Order.new do |c| %>
   <%= c.input :quantity %>
   <%= c.hidden_field :coffee_id, value: @coffee.id %>
