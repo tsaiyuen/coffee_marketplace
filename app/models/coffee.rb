@@ -1,6 +1,7 @@
 class Coffee < ApplicationRecord
   belongs_to :user
   has_many :orders, dependent: :destroy
+  has_many :reviews, through: :orders
   
   validates :name, presence: true
   validates :description, presence: true
