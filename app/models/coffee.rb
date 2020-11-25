@@ -1,7 +1,7 @@
 class Coffee < ApplicationRecord
   belongs_to :user
   has_many :orders, dependent: :destroy
-  
+
   validates :name, presence: true
   validates :description, presence: true
   validates :description, length: { in: 20..200 }
