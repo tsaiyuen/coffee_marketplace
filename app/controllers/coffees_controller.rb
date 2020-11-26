@@ -1,7 +1,9 @@
 class CoffeesController < ApplicationController
+  before_action :set_coffee, only: [:show, :edit, :update, :destroy]
 
   def index
-    @coffees = Coffee.all
+    #@coffees = Coffee.all
+    @coffees = policy_scope(Coffee)
   end
 
   def show
@@ -10,11 +12,13 @@ class CoffeesController < ApplicationController
 
   def new
     @coffee = Coffee.new
+    authorize @coffee
   end
 
   def create
     @coffee = Coffee.new(coffee_params)
     @coffee.user = current_user
+    authorize @coffee
     if @coffee.save
       redirect_to coffee_path(@coffee)
     else
@@ -27,7 +31,8 @@ class CoffeesController < ApplicationController
   end
 
   def update
-    @coffee = Coffee.find(params[:id])
+    #@coffee = Coffee.find(params[:id])
+    authorize @coffee
     @coffee.user = current_user
     if @coffee.update(coffee_params)
       redirect_to coffee_path(@coffee), notice: "Coffee successfuly updated!"
@@ -44,8 +49,12 @@ class CoffeesController < ApplicationController
 
   private
 
+  def set_coffee
+    @coffee = Coffee.find(params[:id])
+    authorize @coffee
+  end
+
   def coffee_params
     params.require(:coffee).permit(:name, :description, :price, :photo)
   end
-
 end
