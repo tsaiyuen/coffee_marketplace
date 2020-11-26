@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    authorize @order
     @order.user_id = current_user.id
 
     if @order.save
