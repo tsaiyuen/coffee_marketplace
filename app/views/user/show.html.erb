@@ -1,6 +1,6 @@
 <h1> <%= current_user.first_name %> </h1>
 
-  <%= link_to "Buy this coffee", new_order_path %>
+  <%= link_to "Buy this coffee", new_order_path,  %>
   <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}  %>
   <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
 
