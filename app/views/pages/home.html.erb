@@ -75,6 +75,10 @@
 
 
 <%= link_to "View coffees", coffees_path %>
+
+<% if user_signed_in? %>
 <%= link_to "View users", users_path %>
 <%= link_to "View orders", orders_path %>
 <%= link_to "View / edit profile", edit_user_registration_path %>
+<% end %>
+
