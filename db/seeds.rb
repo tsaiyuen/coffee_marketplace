@@ -27,9 +27,18 @@ coffee3 = Coffee.create(name: "Sweet Dreams", description: "Light coffee with no
 file3 = open('https://images.unsplash.com/photo-1530032582480-edd739014c39?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
 coffee3.photo.attach(io: file3, filename: 'some-image3.jpg')
 
-Coffee.create(name: "Gold Rocks", description: "Coffee with gold rocks inside.", price: "2000", user: User.second)
-Coffee.create(name: "Coffee the Best", description: "Best coffees in the region, this is a must.", price: "80", user: User.second)
-Coffee.create(name: "Wake Me Up", description: "Before September Ends! Perfect coffee to rock on!", price: "100", user: User.second)
+coffee4 = Coffee.create(name: "Gold Rocks", description: "Coffee with gold rocks inside.", price: "2000", user: User.second)
+file4 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
+coffee4.photo.attach(io: file4, filename: 'some-image4.jpg')
+
+coffee5 = Coffee.create(name: "Coffee the Best", description: "Best coffees in the region, this is a must.", price: "80", user: User.second)
+file5 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
+coffee5.photo.attach(io: file5, filename: 'some-image5.jpg')
+
+coffee6 = Coffee.create(name: "Wake Me Up", description: "Before September Ends! Perfect coffee to rock on!", price: "100", user: User.second)
+file6 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
+coffee6.photo.attach(io: file6, filename: 'some-image6.jpg')
+
 puts "Finished creating coffees!"
 
 puts "Creating orders..."
