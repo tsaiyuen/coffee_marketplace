@@ -5,11 +5,13 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    authorize @review
     @order = Order.find(params[:order_id])
   end
 
   def create
     @review = Review.new(review_params)
+    authorize @review
     @order = Order.find(params[:order_id])
     @review.order = @order
     # @review.coffee = @coffee

@@ -3,10 +3,13 @@
 <% @orders.each do |order|  %>
   <ul>
     <p>
+    User: <%= order.user_id %>
     Date: <%= order.created_at %>
     Quantity: <%= order.quantity %>
     Value: <%= order.order_value %>
-    <%= link_to "Write a review", new_order_review_path(order) %>
+    <% if policy(order).create? %>
+      <%= link_to "Write a review", new_order_review_path(order) %>
+    <% end  %>
     </p>
   </ul>
 <% end  %>
