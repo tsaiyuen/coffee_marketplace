@@ -1,16 +1,17 @@
 class ReviewsController < ApplicationController
-
   def index
     @reviews = Review.all
   end
 
   def new
     @review = Review.new
+    authorize @review
     @order = Order.find(params[:order_id])
   end
-  
+
   def create
     @review = Review.new(review_params)
+    authorize @review
     @order = Order.find(params[:order_id])
     @review.order = @order
     # @review.coffee = @coffee
@@ -27,5 +28,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:description, :rating)
   end
-
 end

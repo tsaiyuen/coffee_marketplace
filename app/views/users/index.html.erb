@@ -1,0 +1,18 @@
+<h1>List of current coffee sellers</h1>
+
+<% @users.each do |u| %>
+ <% if u.coffees != []  %>
+   <%= u.first_name %>
+   <%= u.last_name %>
+   <%= u.email %>
+   <%= u.address %>
+     <% u.coffees.each do |coffee| %>
+       <li>
+        <%= coffee.name %>
+        <%= link_to "See more details", coffee_path(coffee) %>
+       </li>
+     <% end %>
+ <% end %>
+<% end %>
+
+<p><%= link_to "Go back to the home page", root_path %></p>

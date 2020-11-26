@@ -1,10 +1,22 @@
-<%= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>
-
 <h1>Check all the available coffee!</h1>
+
+<%= form_tag coffees_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your perfect coffee"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <ul>
   <% @coffees.each do |c| %>
-    <li> <%= link_to c.name, coffee_path(c) %> - <%= c.description %> </li>
+    <li>
+      <%= link_to c.name, coffee_path(c) %> - <%= c.description %>
+      <% if policy(c).edit? %>
+        <%= link_to "Update", edit_coffee_path(c) %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
@@ -28,3 +40,6 @@
       </div>
     </div>
     </div>
+<% if policy(Coffee).create? %>
+  <%= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>
+<% end %>
