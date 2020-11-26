@@ -2,12 +2,10 @@ class CoffeesController < ApplicationController
   before_action :set_coffee, only: [:show, :edit, :update, :destroy]
 
   def index
-    #@coffees = Coffee.all
     @coffees = policy_scope(Coffee)
   end
 
   def show
-    @coffee = Coffee.find(params[:id])
   end
 
   def new
@@ -27,12 +25,9 @@ class CoffeesController < ApplicationController
   end
 
   def edit
-    @coffee = Coffee.find(params[:id])
   end
 
   def update
-    #@coffee = Coffee.find(params[:id])
-    authorize @coffee
     @coffee.user = current_user
     if @coffee.update(coffee_params)
       redirect_to coffee_path(@coffee), notice: "Coffee successfuly updated!"
@@ -42,7 +37,6 @@ class CoffeesController < ApplicationController
   end
 
   def destroy
-    @coffee = Coffee.find(params[:id])
     @coffee.destroy
     redirect_to coffees_path
   end
