@@ -4,7 +4,7 @@
 
 
 <h2>Reviews</h2>
-
+<%= @reviews.order.coffee %> 
 
 <% if @coffee.photo.attached? %>
   <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>

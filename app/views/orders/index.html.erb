@@ -1,15 +1,13 @@
 <h1>Here are the list of orders:</h1>
 
-<% current_user.orders.each do |order|  %>
+<% @orders.each do |order|  %>
   <ul>
     <p>
     Date: <%= order.created_at %>
     Quantity: <%= order.quantity %>
     Value: <%= order.order_value %>
-    <%= link_to "See more details", order_path(order) %>
+    <%= link_to "Write a review", new_order_review_path(order) %>
     </p>
   </ul>
 <% end  %>
-
-<p><%= link_to "Add a new order", new_order_path(@order) %></p>
 <p><%= link_to "Go back to the home page", root_path %></p>
