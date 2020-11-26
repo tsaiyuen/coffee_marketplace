@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>homepage mockup</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
- <%#    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> %>
   </head>
   <body>
     <main>
         <div class='coffees'>
-          <!-- <img src="images/beans.png" alt="coffees image" class='beans'> -->
           <div class='coffee-grid'>
                <img src=<%= asset_path("coffee1.jpg") %> alt="good coffee" class='grid-img'>
                <img src=<%= asset_path("coffee2.jpg") %> alt="good coffee" class='grid-img'>
@@ -31,21 +22,18 @@
                <img src=<%= asset_path("coffee9.jpg") %> alt="good coffee" class='grid-img'>
           </div>
           <p>find the most amazing artisnal coffee in the world</p>
-          <a href="#" class='btn1'>
-               <%= link_to "View coffees", coffees_path %>
-          </a>
+          <div class='btn1'><%= link_to "View coffees", coffees_path %></div>
         </div>
         <div class='community'>
-          <img src="images/grower.jpg" class='grower' alt="coffee grower" style='width: 100%; height: auto; object-fit: contain;'>
+          <img src=<%= asset_path("grower.jpg") %> class='grower' alt="coffee grower" style='width: 100%; height: auto; object-fit: contain;'>
         </div>
     </main>
     <section class='grower-info'>
       <div>
-        <img src="images/coffee-splash.jpg" alt="coffee" class='coffeesplash'>
+        <img src=<%= asset_path("coffee-splash.jpg") %> alt="coffee" class='coffeesplash'>
       </div>
       <div>
         <div class='people'>
-          <!-- <img src="images/beans.png" alt="coffees image" class='beans'> -->
           <div class='coffee-grid'>
             <img src=<%= asset_path("cg1.jfif") %> alt="good coffee" class='grid-img'>
             <img src=<%= asset_path("cg2.jfif") %> alt="good coffee" class='grid-img'>
@@ -73,8 +61,5 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
+<%# I removed the link_to routes becuasethey are now included in the nav %>
 
-<%= link_to "View coffees", coffees_path %>
-<%= link_to "View users", users_path %>
-<%= link_to "View orders", orders_path %>
-<%= link_to "View / edit profile", edit_user_registration_path %>

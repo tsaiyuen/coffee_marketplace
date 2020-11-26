@@ -1,0 +1,18 @@
+    <nav>
+      <div class='sub-nav'>
+        <img src=<%= asset_path('banner_h4qgji.svg') %> alt="coffee logo" class='nav-img'> 
+        <h3>coffee exchange</h3>
+      </div>
+      <a href="">buy coffee</a>
+      <a href="">sell coffee</a>
+      <a href="">browse coffee</a>
+      <a href="">find coffee</a>
+      <a href="">
+            <% if user_signed_in? %>
+        <p> Hello <%= current_user.email %> ! </p>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+    </a>
+    </nav>
