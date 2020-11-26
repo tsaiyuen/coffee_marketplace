@@ -16,22 +16,12 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <nav>
-      <div class='sub-nav'>
-        <img src="images/banner.svg" alt="coffee logo" class='nav-img'>
-        <h3>coffee exchange</h3>
-      </div>
-      <a href="">buy coffee</a>
-      <a href="">sell coffee</a>
-      <a href="">browse coffee</a>
-      <a href="">find coffee</a>
-      <a href="">sign up</a>
-    </nav>
     <main>
         <div class='coffees'>
           <!-- <img src="images/beans.png" alt="coffees image" class='beans'> -->
           <div class='coffee-grid'>
-            <img src="images/coffee1.jpg" alt="good coffee" class='grid-img'>
+               <%= cl_image_path('https://res.cloudinary.com/dpf5qov5o/image/upload/v1606417231/images/coffee1_-_Copy_zdinbq.jpg') %>
+            <%# <img src="images/cg1.jfif" alt="good coffee" class='grid-img'> %>
             <img src="images/coffee2.jpg" alt="good coffee" class='grid-img'>
             <img src="images/coffee3.jpg" alt="good coffee" class='grid-img'>
             <img src="images/coffee4.jpg" alt="good coffee" class='grid-img'>
@@ -42,7 +32,9 @@
             <img src="images/coffee9.jpg" alt="good coffee" class='grid-img'>
           </div>
           <p>find the most amazing artisnal coffee in the world</p>
-          <a href="#" class='btn1'>discover</a>
+          <a href="#" class='btn1'>
+               <%= link_to "View coffees", coffees_path %>
+          </a>
         </div>
         <div class='community'>
           <img src="images/grower.jpg" class='grower' alt="coffee grower" style='width: 100%; height: auto; object-fit: contain;'>
@@ -71,19 +63,10 @@
         </div>
       </div>
     </section>
-    <footer>
-      <a href="">buy coffee</a>
-      <a href="">sell coffee</a>
-      <a href="">browse coffee</a>
-      <a href="">find coffee</a>
-      <a href="">sign up</a>
-    </footer>
+
   </body>
 </html>
 
-
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 <p>Here is where all of our coffee community members are located:</p>
 <div id="map"
@@ -91,5 +74,5 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<%= link_to "View coffees", coffees_path %>
+
 <%= link_to "View orders", orders_path %>

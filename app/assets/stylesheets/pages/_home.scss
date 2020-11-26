@@ -210,3 +210,44 @@ footer:hover {
   background: rgb(56,34,15);
   transition: 2s;
 }
+
+/*styles only for card */
+.card {
+  display: flex;
+  border-top: 1px solid rgb(99,72,50);
+  box-shadow: 0 12px 20px 5px rgba(56,34,15,0.7);
+  margin: 1vh;
+  min-width: 35vw;
+  max-width: 42vw;
+  height: auto;
+}
+
+.card:hover {
+  background: rgb(247, 244, 240);
+  box-shadow: 0 12px 20px 5px rgba(56,34,15,0.9);
+  transition: 1s;
+}
+
+.card-img {
+  height: 18vh;
+  width: 10vw;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.card-header {
+  color: black;
+  margin: 5px 0 0 0;
+}
+
+.price {
+  font-style: italic;
+  color: black;
+  font-size: small;
+}
+
+/*end card styles*/
