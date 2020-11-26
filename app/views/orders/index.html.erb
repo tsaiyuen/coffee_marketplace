@@ -12,9 +12,13 @@
           Value: <%= order.order_value %>
       
           <% if policy(order).create? %>
-            <%= link_to "Write a review", new_order_review_path(order) %>
+            <%if order.reviews.present? %>
+              <%= link_to "Go to coffee", coffee_path(order.coffee) %>
+            <% else %>
+              <%= link_to "Write a review", new_order_review_path(order) %>
+            <% end %>
           <% end  %>
-        
+      
         </p>
       </ul>
     <% end  %>
