@@ -11,13 +11,14 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     authorize @order
     @order.user_id = current_user.id
+
     if @order.save
       redirect_to orders_path, notice: "We have successfully placed your order!"
     else
       render :new
     end
   end
-
+  
   def edit
   end
 

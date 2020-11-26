@@ -1,21 +1,37 @@
 <h1> <%= @coffee.name %> </h1>
-<h2> Grown by <%= @coffee.user.email %> </h2>
+<h2> Grown by <%= @coffee.user.first_name %> <%= @coffee.user.last_name  %> </h2>
 <p> <%= @coffee.description %> </p>
+
+
+<h2>Reviews</h2>
+<% @coffee.reviews.each do |review| %>
+  <div class="card my-4">
+    <p> Made by: <%= review.order.user.first_name %></p>
+    <p> <%= review.description %> </p>
+    <p> <%= review.rating %> </p>
+  </div>
+<% end %>
+
 
 <% if @coffee.photo.attached? %>
   <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
-<h2>Reviews</h2>
+<div class="card">
+  <% if user_signed_in? && current_user != @coffee.user %>
 
-<%= simple_form_for Order.new do |c| %>
-  <%= c.input :quantity %>
-  <%= c.hidden_field :coffee_id, value: @coffee.id %>
-  <%= c.submit class: "btn btn-info", data: {confirm: "Are you sure you would like to complete this purchase?"} %>
-<% end %>
+    <%= simple_form_for Order.new do |c| %>
+      <%= c.input :quantity %>
+      <%= c.hidden_field :coffee_id, value: @coffee.id %>
+      <%= c.submit class: "btn btn-info", data: {confirm: "Are you sure you would like to complete this purchase?"} %>
+    <% end %>
+  <% end %>
+</div>
+
 
 <% if policy(@coffee).destroy? %>
-  <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}  %>
+  <%= link_to "Edit this coffee",  edit_coffee_path(@coffee), class: "btn btn-primary"  %>
+  <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
