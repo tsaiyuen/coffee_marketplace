@@ -1,5 +1,71 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>homepage mockup</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+ <%#    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> %>
+  </head>
+  <body>
+    <main>
+        <div class='coffees'>
+          <!-- <img src="images/beans.png" alt="coffees image" class='beans'> -->
+          <div class='coffee-grid'>
+               <img src=<%= asset_path("coffee1.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee2.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee3.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee4.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee5.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee6.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee7.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee8.jpg") %> alt="good coffee" class='grid-img'>
+               <img src=<%= asset_path("coffee9.jpg") %> alt="good coffee" class='grid-img'>
+          </div>
+          <p>find the most amazing artisnal coffee in the world</p>
+          <a href="#" class='btn1'>
+               <%= link_to "View coffees", coffees_path %>
+          </a>
+        </div>
+        <div class='community'>
+          <img src="images/grower.jpg" class='grower' alt="coffee grower" style='width: 100%; height: auto; object-fit: contain;'>
+        </div>
+    </main>
+    <section class='grower-info'>
+      <div>
+        <img src="images/coffee-splash.jpg" alt="coffee" class='coffeesplash'>
+      </div>
+      <div>
+        <div class='people'>
+          <!-- <img src="images/beans.png" alt="coffees image" class='beans'> -->
+          <div class='coffee-grid'>
+            <img src=<%= asset_path("cg1.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg2.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg3.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg4.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg5.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg6.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg7.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg8.jfif") %> alt="good coffee" class='grid-img'>
+            <img src=<%= asset_path("cg9.jfif") %> alt="good coffee" class='grid-img'>
+          </div>
+          <p>meet the amazing people who grow world class coffee</p>
+          <a href="#" class='btn1'>community</a>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
+
 
 <p>Here is where all of our coffee community members are located:</p>
 <div id="map"
