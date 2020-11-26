@@ -1,5 +1,14 @@
 <h1>Check all the available coffee!</h1>
 
+<%= form_tag coffees_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your perfect coffee"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <ul>
   <% @coffees.each do |c| %>
     <li>

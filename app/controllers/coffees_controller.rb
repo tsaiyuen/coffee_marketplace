@@ -3,6 +3,17 @@ class CoffeesController < ApplicationController
 
   def index
     @coffees = policy_scope(Coffee)
+    if params[:query].present?
+      sql_query = " \
+        coffees.name ILIKE :query \
+        OR coffees.description ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR users.last_name ILIKE :query \
+      "
+      @coffees = Coffee.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @coffees = Coffee.all
+    end
   end
 
   def show
