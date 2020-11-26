@@ -6,24 +6,23 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @order = Order.find(params[:order_id])
   end
-
+  
   def create
     @review = Review.new(review_params)
+    @order = Order.find(params[:order_id])
+    @review.order = @order
     # @review.coffee = @coffee
     # Order.quantity = @coffee
     if @review.save
-      redirect_to coffee_path(@review)
+      redirect_to coffee_path(@order.coffee)
     else
       render "new"
     end
   end
 
   private
-
-  def set_coffee
-    @coffee = Coffee.find(params[:coffee_id])
-  end
 
   def review_params
     params.require(:review).permit(:description, :rating)
