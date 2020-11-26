@@ -1,25 +1,27 @@
 <h1>Here is the list of your orders:</h1>
 
 <div class="card">
-<% if @orders.present? %>
-  <% @orders.each do |order|  %>
-    <ul>
-      <p>
-      Coffee: <%= order.coffee.name %>
-      Date: <%= order.created_at %>
-      Quantity: <%= order.quantity %>
-      Value: <%= order.order_value %>
-      <% if @review.present? %>
-         <%= link_to "Coffee page", cofee_path(@coffee) %>
-      <% else %>
-        <%= link_to "Write a review", new_order_review_path(order) %>
-      <% end %>
-      </p>
-    </ul>
-  <% end  %>
-<% else %>
-  <%= "I´m sorry, You have no orders done" %>
-<% end %>
+  <% if @orders.present? %>
+    <% @orders.each do |order|  %>
+      <ul>
+        <p>
+          Coffee: <%= order.coffee.name %>
+          User: <%= order.user.first_name %>
+          Date: <%= order.created_at %>
+          Quantity: <%= order.quantity %>
+          Value: <%= order.order_value %>
+      
+          <% if policy(order).create? %>
+            <%= link_to "Write a review", new_order_review_path(order) %>
+          <% end  %>
+        
+        </p>
+      </ul>
+    <% end  %>
+
+  <% else %>
+    <%= "I´m sorry, You have no orders done" %>
+  <% end %>
 </div>
 
 <p><%= link_to "Go back to the home page", root_path %></p>
