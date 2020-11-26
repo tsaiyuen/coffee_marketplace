@@ -6,6 +6,7 @@ class CoffeesController < ApplicationController
   end
 
   def show
+    @reviews = @coffee.reviews
   end
 
   def new
