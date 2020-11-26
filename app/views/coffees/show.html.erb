@@ -17,7 +17,6 @@
   <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
-
 <%= simple_form_for Order.new do |c| %>
   <%= c.input :quantity %>
   <%= c.hidden_field :coffee_id, value: @coffee.id %>
@@ -26,4 +25,8 @@
 
 <%= link_to "Edit this coffee",  edit_coffee_path(@coffee), class: "btn btn-primary"  %>
 <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary"  %>
+<% if policy(@coffee).destroy? %>
+  <%= link_to "Delete this coffee", coffee_path(@coffee), method: :delete, data: {confirm: "Are you sure?"}  %>
+<% end %>
+
 <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
