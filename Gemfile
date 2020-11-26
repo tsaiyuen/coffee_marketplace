@@ -31,6 +31,9 @@ gem 'devise'
 # gem geocoding for maps
 gem 'geocoder'
 
+# gem file for authorization and pundit
+gem 'pundit'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
