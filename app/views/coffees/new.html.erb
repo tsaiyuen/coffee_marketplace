@@ -1,9 +1,13 @@
-<%= simple_form_for @coffee do |c| %>
-  <%= c.input :name %>
-  <%= c.input :description %>
-  <%= c.input :price %>
-  <%= c.input :photo, as: :file %>
-  <%= c.submit class: "btn btn-info" %>
-<% end %>
+<div class="c-show-container">
+  <div class="c-show-portal">
+  <%= simple_form_for @coffee do |c| %>
+    <%= c.input :name %>
+    <%= c.input :description %>
+    <%= c.input :price %>
+    <%= c.input :photo, as: :file %>
+    <%= c.submit class: "btn btn-info" %>
+  <% end %>
 
-  <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
+    <%= link_to "Back", coffees_path, class: "btn btn-primary" %>
+  </div>
+</div>

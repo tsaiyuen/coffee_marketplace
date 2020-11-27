@@ -1,14 +1,16 @@
     <nav>
+    <a href="https://coffee-marketplace-ckt.herokuapp.com/">
       <div class='sub-nav'>
-        <%= link_to root_path, class: 'hidden'%>
         <img src=<%= asset_path('banner_h4qgji.svg') %> alt="coffee logo" class='nav-img'> 
         <h3>coffee exchange</h3>
       </div>
-      <a href="">buy coffee</a>
-      <a href="">sell coffee</a>
-      <a href="">browse coffee</a>
-      <a href="">find coffee</a>
-      <a href="">
+    </a>
+
+        <%= link_to "buy coffee", coffees_path %>
+        <%= link_to "sell coffee", new_coffee_path %>
+        <%= link_to "community", users_path %>
+        <%= link_to "edit profile", edit_user_registration_path %>
+
             <% if user_signed_in? %>
         <p> Hello <%= current_user.email %> ! </p>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>

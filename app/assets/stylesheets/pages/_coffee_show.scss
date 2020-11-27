@@ -1,0 +1,18 @@
+.c-show-container {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.c-show-portal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(56,34,15);
+  border-radius: 3rem;
+  background: rgb(219, 209, 195);
+  padding: 22px;
+  box-shadow: 9px 13px rgba(75, 75, 75, 0.5);
+}
