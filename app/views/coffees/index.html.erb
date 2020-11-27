@@ -32,11 +32,9 @@
   <% end %>
 </div>
 
-<% if policy(Coffee).create? %>
-  <%= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>
-<% end %>
+<%# if policy(Coffee).create? %>
+  <%#= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>
+<%# end %>
 
-<p><%= link_to "Go back to the home page", root_path %></p>
+<!-- <p><%#= link_to "Go back to the home page", root_path %></p>
 
-
-<!-- <img src="../images/coffee4.jpg" alt="coffee" class="card-img"> -->
