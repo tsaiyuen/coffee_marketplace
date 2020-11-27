@@ -9,10 +9,9 @@
         <%= link_to "buy coffee", coffees_path %>
         <%= link_to "sell coffee", new_coffee_path %>
         <%= link_to "community", users_path %>
-        <%= link_to "edit profile", edit_user_registration_path %>
-
+        
             <% if user_signed_in? %>
-        <p> Hello <%= current_user.email %> ! </p>
+        <p> Hello <%= current_user.first_name %> <%= current_user.last_name %> ! </p>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "Sign in", new_user_session_path %>
