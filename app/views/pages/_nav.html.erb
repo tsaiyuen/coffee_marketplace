@@ -11,7 +11,7 @@
         <%= link_to "community", users_path %>
         
             <% if user_signed_in? %>
-        <p> Hello <%= current_user.first_name %> <%= current_user.last_name %>! </p>
+        <p class='colortext'> Hello <%= current_user.first_name %> <%= current_user.last_name %>! </p>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "Sign in", new_user_session_path %>
