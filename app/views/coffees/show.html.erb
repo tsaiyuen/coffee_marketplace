@@ -8,7 +8,7 @@
  <%# sdfb jkhf %>
     <h2>Reviews</h2>
   <% @coffee.reviews.each do |review| %>
-    <div class="card my-4">
+    <div>
       <p> Made by: <%= review.order.user.first_name %></p>
       <p> <%= review.description %> </p>
       <p> rating: <%= review.rating %> </p>

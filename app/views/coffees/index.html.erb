@@ -1,6 +1,7 @@
 
 <%# <h3>coffee exchange</h3> %>
-
+<div class="c-show-container">
+  <div class="c-show-portal">
 <h1>Currently available coffee:</h1>
 
 <%= form_tag coffees_path, method: :get do %>
@@ -12,16 +13,15 @@
   <%= submit_tag "Search", class: "btn1" %>
 <% end %>
 
-<div class="d-flex flex-wrap">
   <% @coffees.each do |c| %>
       <div class="card">
-        <div class="card coffee-images">
+        <div class="card-img">
         <% if c.photo.attached? %>
           <%= cl_image_tag c.photo.key, height: 200, width: 300, crop: :fill %>
         <% end %>
         </div>
         <div class="card-content">
-          <h3 class="card-header"><%= link_to c.name, coffee_path(c) %></h3>
+          <h3 class="card-header"><%= link_to c.name, coffee_path(c), class: "card-header" %></h3>
           <p><%= c.description %></p>
           <p>Price: $<%= c.price %></p>
           <% if policy(c).edit? %>
@@ -30,7 +30,19 @@
         </div>
       </div>
   <% end %>
+
+  </div>
 </div>
+
+<%# <div class="card">
+        <img src="../images/coffee4.jpg" alt="coffee" class="card-img">
+        <div class="card-content">
+          <h3 class="card-header">Coffee Name</h3>
+          <p>The coffee description will go right here. <br>
+            Here is where the coffee description will go.</p>
+          <p class="price">$15</p>
+        </div>
+      </div> %>
 
 <%# if policy(Coffee).create? %>
   <%#= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>

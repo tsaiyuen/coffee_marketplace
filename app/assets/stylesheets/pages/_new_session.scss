@@ -1,8 +1,10 @@
 .session-container {
-  height: 88vh;
+  height: auto;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .session-portal {
