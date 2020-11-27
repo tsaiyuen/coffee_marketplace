@@ -22,7 +22,8 @@
                <img src=<%= asset_path("coffee9.jpg") %> alt="good coffee" class='grid-img'>
           </div>
           <p>find the most amazing artisnal coffee in the world</p>
-          <div class='btn1'><%= link_to "View coffees", coffees_path %></div>
+          <%= link_to "View Coffees", coffees_path, class: 'btn1' %>
+
         </div>
         <div class='community'>
           <img src=<%= asset_path("grower.jpg") %> class='grower' alt="coffee grower" style='width: 100%; height: auto; object-fit: contain;'>
