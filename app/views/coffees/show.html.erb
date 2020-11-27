@@ -2,7 +2,6 @@
 <h2> Grown by <%= @coffee.user.first_name %> <%= @coffee.user.last_name  %> </h2>
 <p> <%= @coffee.description %> </p>
 
-
 <h2>Reviews</h2>
 <% @coffee.reviews.each do |review| %>
   <div class="card my-4">
@@ -11,7 +10,6 @@
     <p> <%= review.rating %> </p>
   </div>
 <% end %>
-
 
 <% if @coffee.photo.attached? %>
   <%= cl_image_tag @coffee.photo.key, height: 300, width: 400, crop: :fill %>
