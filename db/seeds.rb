@@ -10,8 +10,8 @@ puts "DB clean successfully"
 
 puts "Creating users..."
 User.create(email:"cynthia@gmail.com", first_name:"Cynthia", last_name:"Tong", password:"123456", address: "1 Langdon st Madison, WI 53703", phone_number: 1233)
-User.create(email:"ken@gmail.com", first_name:"Ken", last_name:"Wall", password:"123456", address: "H4198 Nakoosa Trail, Madison, WI 53714", phone_number: 22222)
 User.create(email:"taro@gmail.com", first_name:"Taro", last_name:"Tomiya", password:"123456", address: "700 Kenseth Way, Cambridge, WI 53523", phone_number: 1211)
+User.create(email:"ken@gmail.com", first_name:"Ken", last_name:"Wall", password:"123456", address: "H4198 Nakoosa Trail, Madison, WI 53714", phone_number: 22222)
 puts "Finished creating user!"
 
 puts "Creating coffees..."
@@ -32,11 +32,11 @@ file4 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib
 coffee4.photo.attach(io: file4, filename: 'some-image4.jpg')
 
 coffee5 = Coffee.create(name: "Coffee the Best", description: "Best coffees in the region, this is a must.", price: "80", user: User.second)
-file5 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
+file5 = open('https://images.unsplash.com/photo-1601657672107-ebf66c393b5c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=762&q=80')
 coffee5.photo.attach(io: file5, filename: 'some-image5.jpg')
 
 coffee6 = Coffee.create(name: "Wake Me Up", description: "Before September Ends! Perfect coffee to rock on!", price: "100", user: User.second)
-file6 = open('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60')
+file6 = open('https://images.unsplash.com/photo-1421986872218-300a0fea5895?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80')
 coffee6.photo.attach(io: file6, filename: 'some-image6.jpg')
 
 puts "Finished creating coffees!"
