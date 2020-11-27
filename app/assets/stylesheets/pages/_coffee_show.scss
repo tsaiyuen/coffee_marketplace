@@ -1,5 +1,6 @@
 .c-show-container {
-  height: 88vh;
+  height: auto;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +13,13 @@
   justify-content: center;
   border: 1px solid rgb(56,34,15);
   border-radius: 3rem;
-  background: rgb(219, 209, 195);
+  background: rgb(247, 244, 240);
   padding: 22px;
-  box-shadow: 9px 13px rgba(75, 75, 75, 0.5);
+  box-shadow: 0 12px 20px 5px rgba(56,34,15,0.7);
+}
+
+.c-show-portal:hover {
+  //background: rgb(247, 244, 240);
+  box-shadow: 9px 13px rgba(75, 75, 75, 0.8);
+  transition: 2s;
 }
