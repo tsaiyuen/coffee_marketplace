@@ -1,7 +1,12 @@
-<%= simple_form_for [@order, @review] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :rating %>
-  <%= f.submit class: "btn btn-info" %>
-<% end %>
+<div class="c-show-container">
+  <div class="c-show-portal">
 
-  <%= link_to "Back", orders_path, class: "btn btn-primary" %>
+  <%= simple_form_for [@order, @review] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :rating %>
+    <%= f.submit class: "btn btn-info" %>
+  <% end %>
+
+    <%= link_to "Back", orders_path, class: "btn1" %>
+    </div>
+</div>

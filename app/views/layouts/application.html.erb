@@ -12,38 +12,11 @@
   </head>
 
   <body>
-    <nav>
-      <div class='sub-nav'>
-        <%# <%= asset_path('banner_h4qgji.svg') %>
-        <img src=<%= asset_path('banner_h4qgji.svg') %> alt="coffee logo" class='nav-img'> 
-        <%# <div style='background-image: url("https://d1e3z2jco40k3v.cloudfront.net/-/media/mccormick-us/recipes/mccormick/f/800/fiesta_tacos_800x800.jpg")';><h1>have taco</h1>
-        </div> %>
-        <h3>coffee exchange</h3>
-      </div>
-      <a href="">buy coffee</a>
-      <a href="">sell coffee</a>
-      <a href="">browse coffee</a>
-      <a href="">find coffee</a>
-      <a href="">
-            <% if user_signed_in? %>
-        <p> Hello <%= current_user.email %> ! </p>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
-      <% end %>
-    </a>
-    </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <%= render "pages/nav" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-    <% if user_signed_in? %>
-      <p> Hello <%= current_user.first_name %> <%= current_user.last_name %> ! </p>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
-    <% end %>
-
-    <%= yield %>
+  <%= yield %>
 
   <%= render "pages/footer" %>
   </body>
