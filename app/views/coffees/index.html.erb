@@ -1,9 +1,7 @@
-     
+
 <%# <h3>coffee exchange</h3> %>
 
-
-
-<h1>Check all the available coffee!</h1>
+<h1>Currently available coffee:</h1>
 
 <%= form_tag coffees_path, method: :get do %>
   <%= text_field_tag :query,
@@ -14,39 +12,31 @@
   <%= submit_tag "Search", class: "btn1" %>
 <% end %>
 
-<ul>
+<div class="d-flex flex-wrap">
   <% @coffees.each do |c| %>
-    <li>
-      <%= link_to c.name, coffee_path(c) %> - <%= c.description %>
-      <% if policy(c).edit? %>
-        <%= link_to "Update", edit_coffee_path(c) %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<div class="container">
       <div class="card">
-        <img src="../images/coffee4.jpg" alt="coffee" class="card-img">
+        <div class="card coffee-images">
+        <% if c.photo.attached? %>
+          <%= cl_image_tag c.photo.key, height: 200, width: 300, crop: :fill %>
+        <% end %>
+        </div>
         <div class="card-content">
-          <h3 class="card-header">Coffee Name</h3>
-          <p>The coffee description will go right here. <br>
-            Here is where the coffee description will go.</p>
-          <p class="price">$15</p>
+          <h3 class="card-header"><%= link_to c.name, coffee_path(c) %></h3>
+          <p><%= c.description %></p>
+          <p>Price: $<%= c.price %></p>
+          <% if policy(c).edit? %>
+            <p><%= link_to "Update", edit_coffee_path(c) %></p>
+          <% end %>
         </div>
       </div>
-      <div class="card">
-        <img src="../images/coffee4.jpg" alt="coffee" class="card-img">
-        <div class="card-content">
-          <h3 class="card-header">Coffee Name</h3>
-          <p>The coffee description will go right here. <br>
-            Here is where the coffee description will go.</p>
-          <p class="price">$15</p>
-      </div>
-    </div>
-    </div>
+  <% end %>
+</div>
+
 <% if policy(Coffee).create? %>
   <%= link_to "Sell a coffee", new_coffee_path(), class: "btn btn-primary" %>
 <% end %>
 
 <p><%= link_to "Go back to the home page", root_path %></p>
+
+
+<!-- <img src="../images/coffee4.jpg" alt="coffee" class="card-img"> -->
